@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-import { Text, Button } from 'react-native';
+import {
+  Button,
+  Text,
+  View,
+} from 'react-native';
 
 export default class HomeScreen extends Component {
   render() {
-    return <Button onPress={() => this.myNav()} title="HomeScreen"/>;
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+        <Button onPress={() => this.myNav()} title="Go to details"/>
+      </View>
+    );
   }
 
   myNav() {
