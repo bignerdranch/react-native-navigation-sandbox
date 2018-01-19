@@ -24,15 +24,11 @@ class HomeScreen extends Component {
   }
 }
 
-class DetailsScreen extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-      </View>
-    );
-  }
-}
+const DetailsScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Details Screen</Text>
+  </View>
+);
 
 Navigation.registerComponent('example.HomeScreen', () => HomeScreen);
 Navigation.registerComponent('example.DetailsScreen', () => DetailsScreen);
