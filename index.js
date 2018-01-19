@@ -1,8 +1,41 @@
+import React, { Component } from 'react';
+import {
+  Button,
+  Text,
+  View,
+} from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
-import { registerScreens } from './screens';
+class HomeScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+        <Button onPress={() => this.myNav()} title="Go to details"/>
+      </View>
+    );
+  }
 
-registerScreens(); // this is where you register all of your app's screens
+  myNav() {
+    this.props.navigator.push({
+      screen: 'example.DetailsScreen',
+      title: 'Details Screen'
+    });
+  }
+}
+
+class DetailsScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+      </View>
+    );
+  }
+}
+
+Navigation.registerComponent('example.HomeScreen', () => HomeScreen);
+Navigation.registerComponent('example.DetailsScreen', () => DetailsScreen);
 
 // start the app
 Navigation.startSingleScreenApp({
