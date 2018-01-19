@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
 
-export default class PushedScreen extends Component {
+export default class DetailsScreen extends Component {
   render() {
-    return <Text>PushedScreen</Text>;
+    return <Text>DetailsScreen</Text>;
   }
 }
